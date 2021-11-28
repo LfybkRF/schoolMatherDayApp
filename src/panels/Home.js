@@ -39,7 +39,7 @@ const Home = () => {
 
     const go = () => {
         let a = document.getElementById('date').value;
-        if (a[4] == '-' && a[7] == '-' && a in database){
+        if (a[4] === '-' && a[7] === '-' && a in database){
             setActiveUser(a);
 		    setActivePanel('home');
         }else{
@@ -51,28 +51,28 @@ const Home = () => {
     return(
         
         <div className='container' style={{color:'#00000081'}}>
-        { activePanel == 'Intro' ?
+        { activePanel === 'Intro' ?
             <div style={{margin:'90% 0px 0px'}}>
                 Введите дату вашего рождения
                 <div style={{marginTop:'20px',display:'flex', border:'solid 2px #B8434345', borderRadius:'15px', width:'100%', height:'50px', backgroundColor:'#ffffff'}}>
                     <input id='date' type='date' style={{marginLeft:'15px',border:'0px', height:'47px', backgroundColor:'#ffffff'}}/>
                     <div style={{height:'50px',width:'50px', backgroundColor:'#FAEFEB', border:'solid 2px #B8434345', borderRadius:'15px', marginLeft:'auto', marginTop:'-0.5%'}} onClick={() => {go()}}>
-                        <img width={30} src={arrow} style={{margin:'38% 0px'}} />
+                        <img width={30} src={arrow} alt='' style={{margin:'38% 0px'}} />
                     </div>
                     
                 </div>
-                <img width={50} src={heart} style={{position:'relative', bottom:'25px', right:'50%',}} />
+                <img width={50} src={heart} alt='' style={{position:'relative', bottom:'25px', right:'50%',}} />
             </div>
         : 
             <div style={{padding:'5px'}}>
                 
                 <div style={{marginTop:'20%', border:'solid 2px #B8434345', borderRadius:'15px', justifyContent:'center', width:'100%', backgroundColor:'#ffffff', padding:'12px 0px 25px'}}>
-                    <img width='80%' src={database[`${activeUser}`]?.url} style={{borderRadius:'20px'}}/>
+                    <img width='80%' src={database[`${activeUser}`]?.url} alt='' style={{borderRadius:'20px'}}/>
                     <div>
                         {database[`${activeUser}`]?.text}
                     </div>
                 </div>
-                <img width={50} src={heart} style={{position:'relative', bottom:'40px', right:'45%'}} />
+                <img width={50} src={heart} alt='' style={{position:'relative', bottom:'40px', right:'45%'}} />
             </div>
         }
         </div>
