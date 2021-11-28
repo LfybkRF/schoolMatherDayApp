@@ -3,6 +3,8 @@ import './panels/style.css';
 
 import Home from './panels/Home';
 
+process.env.CI = false;
+
 const App = () => {
 
 
